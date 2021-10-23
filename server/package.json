@@ -1,0 +1,22 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Kamil",
+  "license": "ISC",
+  "dependencies": {
+    "express": "4.17.1",
+    "pg": "8.7.1",
+    "cors": "2.8.5",
+    "nodemon": "1.18.3",
+    "body-parser": "*"
+  },
+  "scripts": {
+    "dev": "nodemon",
+    "start": "node index.js"
+  }
+}
