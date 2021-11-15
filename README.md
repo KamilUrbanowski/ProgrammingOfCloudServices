@@ -28,3 +28,13 @@ npm, docker-desktop, kubectl
 If you are switching from docker-compose to running a kubernetes cluster you have to run "docker-compose down" because ingresses will clash.
 The other way around to switch from k8s cluster to docker-compose way you have to run:
 "kubectl delete -f manifests" and "kubectl delete -f  https://raw.githubusercontent.com/kubernetes/ingress-nginx/controller-v1.0.4/deploy/static/provider/cloud/deploy.yaml".
+
+
+# Architektura
+
+Każdy element systemu jest kontenerem Docker a do zarządzania nimi jest wykorzystany Kubernetes. System jest zbudowany z następujących elementów:
+1.	**Serwera proxy** *nginx* którego zadaniem jest przekierowanie żądań klienta do odpowiednich Podów.
+2.	**Frontend** w postaci *Reacta* do iterakcji z użytkownikiem
+3.	**Backend** na silniku *Node.js* z frameworkiem *Express* pozwalającym na łatwe zbudowanie REST API dla frontendu
+4.	**Baza danych** *PostgreSQL* na której przechowywane są wiadomości
+
