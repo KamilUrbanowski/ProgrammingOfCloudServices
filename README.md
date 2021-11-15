@@ -34,7 +34,16 @@ The other way around to switch from k8s cluster to docker-compose way you have t
 
 Każdy element systemu jest kontenerem Docker a do zarządzania nimi jest wykorzystany Kubernetes. System jest zbudowany z następujących elementów:
 1.	**Serwera proxy** *nginx* którego zadaniem jest przekierowanie żądań klienta do odpowiednich Podów.
-2.	**Frontend** w postaci *Reacta* do iterakcji z użytkownikiem
-3.	**Backend** na silniku *Node.js* z frameworkiem *Express* pozwalającym na łatwe zbudowanie REST API dla frontendu
-4.	**Baza danych** *PostgreSQL* na której przechowywane są wiadomości
+2.	**Frontend** w postaci *Reacta* do iterakcji z użytkownikiem.
+3.	**Backend** na silniku *Node.js* z frameworkiem *Express* pozwalającym na łatwe zbudowanie REST API dla frontendu.
+4.	**Baza danych** *PostgreSQL* na której przechowywane są wiadomości.
+
+![Diagram architektury](./documentation/DiagramArchitektury.drawio.svg)
+
+# Przypadki użycia
+
+Aplikacja ma służyć do dystrybuowania wiadomości na wspólnym kanale pomiędzy zarejestrowanymi użytkownikami.
+
+![Diagram przypadków użycia](./documentation/255927176_487888469032763_4747737515049667795_n.png)
+
 
