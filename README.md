@@ -1,6 +1,6 @@
 # Programming Of Cloud Services
 
-Hello to our little ☁ project
+Hello to our little ☁ project.
 
 # How to start
 
