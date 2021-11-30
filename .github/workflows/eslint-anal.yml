@@ -1,0 +1,11 @@
+name: "Eslint analysis"
+on: [push]
+jobs:
+  eslitn-analisys:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - run: npm i
+      - run: npx eslint .

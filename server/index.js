@@ -29,7 +29,8 @@ app.get("/", (req, res) => {
 
 app.get("/messages/all", async (req, res) => {
     const values = await pgClient.query("SELECT * FROM message");
-
+    console.log(values)
+    values.rows
     res.send(values);
 });
 
