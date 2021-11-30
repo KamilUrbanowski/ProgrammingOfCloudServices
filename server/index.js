@@ -29,8 +29,6 @@ app.get("/", (req, res) => {
 
 app.get("/messages/all", async (req, res) => {
     const values = await pgClient.query("SELECT * FROM message");
-    console.log(values)
-    values.rows
     res.send(values);
 });
 
@@ -42,6 +40,9 @@ app.post("/messages", async (req, res) => {
     res.send({ working: true});
 });
 
-app.listen(5000, err => {
+app.listen(5000, error => {
+    if(error) {
+        console.error(error);
+    }
     console.log("Listening");
 })
