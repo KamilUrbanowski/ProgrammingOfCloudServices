@@ -1,11 +1,13 @@
 name: "Eslint analysis"
 on: [push]
 jobs:
-  eslitn-analisys:
+  client-eslint-analisis:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
+      - run: cd client
+      - run: pwd
       - run: npm i --save-dev
       - run: npx eslint .
