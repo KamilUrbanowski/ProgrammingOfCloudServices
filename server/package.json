@@ -4,19 +4,19 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "dev": "nodemon",
+    "start": "node index.js"
   },
   "author": "Kamil",
   "license": "ISC",
   "dependencies": {
-    "express": "4.17.1",
-    "pg": "8.7.1",
+    "body-parser": "*",
     "cors": "2.8.5",
+    "express": "4.17.1",
     "nodemon": "1.18.3",
-    "body-parser": "*"
+    "pg": "8.7.1"
   },
-  "scripts": {
-    "dev": "nodemon",
-    "start": "node index.js"
+  "devDependencies": {
+    "eslint": "^8.3.0"
   }
 }
