@@ -7,7 +7,14 @@ jobs:
       - uses: actions/checkout@v2
         with:
           fetch-depth: 1
-      - run: cd client
-      - run: pwd
-      - run: npm i --save-dev
-      - run: npx eslint .
+      - name: Pwd
+        working-directory: ./client
+        run: pwd
+
+      - name: Instal
+        working-directory: ./client
+        run: npm i --save-dev
+
+      - name: Eslint analisis
+        working-directory: ./client
+        run: npx eslint .
