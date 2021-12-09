@@ -4,6 +4,7 @@ import { BrowserRouter as Router, Route, Link } from "react-router-dom";
 import OtherPage from "./OtherPage";
 import MainComponent from "./MainComponent";
 
+// THis should be fixed
 function App() {
   return (
     <Router>
