@@ -34,16 +34,7 @@ const MainComponent = () => {
 
 
   return (
-    <Div
-      border="1px solid"
-      borderColor="gray200"
-      rounded="xl"
-      background="white"
-      shadow="4"
-      overflow="hidden"
-      p="32px"
-      m="0 0 40px 0"
-    >
+    <>
       <Div d="flex" justify="space-between">
         <Div>
           <Text tag="h1" textSize="display1" m={{ b: "1rem" }}>Messages</Text>
@@ -131,7 +122,7 @@ const MainComponent = () => {
           }
         />
       </form>
-    </Div>
+    </>
   );
 };
 

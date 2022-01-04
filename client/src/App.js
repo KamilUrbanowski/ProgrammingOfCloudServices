@@ -1,7 +1,7 @@
 import { Fragment } from "react";
 import { Container, Div, Row, Col, Button, Icon, Text } from "atomize";
 import { BrowserRouter as Router, Route, Link } from "react-router-dom";
-import OtherPage from "./OtherPage";
+import LoginPage from "./LoginPage";
 import MainComponent from "./MainComponent";
 
 function App() {
@@ -12,14 +12,14 @@ function App() {
           <Row justify="center">
             <Col size="12">
               <Div p="80px 0">
-            
+
                 {/* <div>Message APP!</div>
                 <Link to="/">Home</Link>
                 <Link to="/otherpage">Other page</Link> */}
 
                 <Div d="flex" justify="space-between" p={{ md: '0.5rem' }}>
                   <Text m={{ r: "0.8rem" }}>
-                  Hello, Janusz 
+                    Hello, Janusz
                   </Text>
 
                   <Button
@@ -47,9 +47,18 @@ function App() {
                   </Button>
                 </Div>
 
-                <Div className="main">
+                <Div
+                  border="1px solid"
+                  borderColor="gray200"
+                  rounded="xl"
+                  background="white"
+                  shadow="4"
+                  overflow="hidden"
+                  p="32px"
+                  m="0 0 40px 0"
+                >
                   <Route exact path="/" component={MainComponent} />
-                  <Route path="/otherpage" component={OtherPage} />
+                  <Route path="/login" component={LoginPage} />
                 </Div>
 
 
