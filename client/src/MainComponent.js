@@ -1,9 +1,9 @@
 import { useCallback, useState, useEffect } from "react";
-import { Button, Input, Icon, Text, Div, Row, Col } from "atomize";
+import { Button, Input, Icon, Text, Div } from "atomize";
 import axios from "axios";
 
 const MainComponent = () => {
-  const [values, setMessages] = useState(["hello1"]);
+  const [values, setMessages] = useState([]);
   const [value, setValue] = useState("");
   const values2 = ["This", "section", "is", "inside", "collapse", "This", "section", "is", "inside", "collapse", "This", "section", "is", "inside", "collapse"];
 
@@ -71,27 +71,40 @@ const MainComponent = () => {
         maxH="500px"
         overflow="visible scroll"
       >
-        {values2.map(
+        {/* {values2.map(
           (name, index) => (
             <Div
               p={{ x: "1rem", y: "0.75rem" }}
-              border={{ b: index !== values2.length-1 && "1px solid" }}
+              border={{ b: index !== values2.length - 1 && "1px solid" }}
               borderColor="gray400"
             >
+              <Text textSize="tiny">{name}</Text>
               {name}
             </Div>
           )
-        )}
+        )} */}
 
-              {/* {values.size > 0
-          ? values.map(value => (<div className="message">{value}</div>))
+        {values.length > 0
+          ? values.map(
+            (value, index) => (
+              <Div
+                p={{ x: "1rem", y: "0.75rem" }}
+                border={{ b: index !== values.length - 1 && "1px solid" }}
+                borderColor="gray400"
+                key={index}
+              >
+                <Text textSize="tiny">Janusz</Text>
+                {value}
+              </Div>
+            )
+          )
           : <Text
             m={{ t: '4rem', b: '4rem' }}
             textAlign="center"
             textSize="body"
             textColor="gray900">
             Message feed is empty
-          </Text>} */}
+          </Text>}
       </Div>
 
       <form className="form" onSubmit={saveMessage}>
