@@ -3,8 +3,9 @@ import { Button, Input, Icon, Text, Div, Row, Col } from "atomize";
 import axios from "axios";
 
 const MainComponent = () => {
-  const [values, setMessages] = useState([]);
+  const [values, setMessages] = useState(["hello1"]);
   const [value, setValue] = useState("");
+  const values2 = ["This", "section", "is", "inside", "collapse", "This", "section", "is", "inside", "collapse", "This", "section", "is", "inside", "collapse"];
 
   const getAllMessages = useCallback(async () => {
     // we will use nginx to redirect it to the proper URL
@@ -30,6 +31,8 @@ const MainComponent = () => {
     getAllMessages();
   }, []);
 
+
+
   return (
     <Div
       border="1px solid"
@@ -41,7 +44,7 @@ const MainComponent = () => {
       p="32px"
       m="0 0 40px 0"
     >
-      <Div d="flex" justify="space-between" m={{ b: '2rem' }}>
+      <Div d="flex" justify="space-between">
         <Div>
           <Text tag="h1" textSize="display1" m={{ b: "1rem" }}>Messages</Text>
         </Div>
@@ -69,11 +72,37 @@ const MainComponent = () => {
         </Div>
       </Div>
 
-      <div className="messages">
-        {values.map(value => (
-          <div className="message">{value}</div>
-        ))}
-      </div>
+      <Div
+        bg="gray100"
+        border="1px solid"
+        borderColor="gray400"
+        rounded="lg"
+        maxH="500px"
+        overflow="visible scroll"
+      >
+        {values2.map(
+          (name, index) => (
+            <Div
+              p={{ x: "1rem", y: "0.75rem" }}
+              border={{ b: index !== values2.length-1 && "1px solid" }}
+              borderColor="gray400"
+            >
+              {name}
+            </Div>
+          )
+        )}
+
+              {/* {values.size > 0
+          ? values.map(value => (<div className="message">{value}</div>))
+          : <Text
+            m={{ t: '4rem', b: '4rem' }}
+            textAlign="center"
+            textSize="body"
+            textColor="gray900">
+            Message feed is empty
+          </Text>} */}
+      </Div>
+
       <form className="form" onSubmit={saveMessage}>
         <Input
           placeholder="Enter your message"
@@ -81,6 +110,7 @@ const MainComponent = () => {
           onChange={event => {
             setValue(event.target.value);
           }}
+          m={{ t: "1.5rem" }}
           suffix={
             <Button
               pos="absolute"
