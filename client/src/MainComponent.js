@@ -1,30 +1,33 @@
 import { useCallback, useState, useEffect } from "react";
 import { Button, Input, Icon, Text, Div } from "atomize";
 import axios from "axios";
+import { useAuth0 } from "@auth0/auth0-react";
 
 const MainComponent = () => {
+  const { error, user, isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
   const [values, setMessages] = useState([]);
   const [value, setValue] = useState("");
-  const values2 = ["This", "section", "is", "inside", "collapse", "This", "section", "is", "inside", "collapse", "This", "section", "is", "inside", "collapse"];
+  const username = user.name;
 
   const getAllMessages = useCallback(async () => {
     // we will use nginx to redirect it to the proper URL
     const data = await axios.get("/api/messages/all");
-    setMessages(data.data.rows.map(row => row.data));
-
+    setMessages(data.data.rows.map(row => row));
+    console.log(data);
   }, []);
 
   const saveMessage = useCallback(
     async event => {
       event.preventDefault();
-
       await axios.post("/api/messages", {
+        username,
         value
       });
 
       setValue("");
+      getAllMessages();
     },
-    [value]
+    [username, value]
   );
 
   useEffect(() => {
@@ -93,8 +96,8 @@ const MainComponent = () => {
                 borderColor="gray400"
                 key={index}
               >
-                <Text textSize="tiny">Janusz</Text>
-                {value}
+                <Text textSize="tiny">{value.username}</Text>
+                {value.data}
               </Div>
             )
           )
