@@ -4,8 +4,7 @@ import axios from "axios";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const MainComponent = () => {
-<<<<<<< HEAD
-  const { error, user, isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
+  const { user } = useAuth0();
   const [values, setMessages] = useState([]);
   const [value, setValue] = useState("");
   const username = user.name;
@@ -34,8 +33,6 @@ const MainComponent = () => {
   useEffect(() => {
     getAllMessages();
   }, []);
-
-
 
   return (
     <>
@@ -141,56 +138,6 @@ const MainComponent = () => {
       </form>
     </>
   );
-=======
-    const [values, setMessages] = useState([]);
-    const [value, setValue] = useState("");
-
-    const getAllMessages = useCallback(async () => {
-        // we will use nginx to redirect it to the proper URL
-        const data = await axios.get("/api/messages/all");
-        setMessages(data.data.rows.map((row) => row.data));
-    }, []);
-
-    const saveMessage = useCallback(
-        async (event) => {
-            event.preventDefault();
-
-            await axios.post("/api/messages", {
-                value,
-            });
-
-            setValue("");
-        },
-        [value]
-    );
-
-    useEffect(() => {
-        getAllMessages();
-    }, []);
-
-    return (
-        <div>
-            <button onClick={getAllMessages}>Get all messages</button>
-            <br />
-            <span className="title">Messages</span>
-            <div className="messages">
-                {values.map((value) => (
-                    <div className="message">{value}</div>
-                ))}
-            </div>
-            <form className="form" onSubmit={saveMessage}>
-                <label>Enter your message: </label>
-                <input
-                    value={value}
-                    onChange={(event) => {
-                        setValue(event.target.value);
-                    }}
-                />
-                <button>Submit</button>
-            </form>
-        </div>
-    );
->>>>>>> 306a8295ea2eb9be360365b0b1b3ef8ece417bae
 };
 
 export default MainComponent;

@@ -1,5 +1,5 @@
 import React from "react";
-import { Container, Div, Row, Col, Button, Icon, Text } from "atomize";
+import { Button, Icon } from "atomize";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const LogoutButton = () => {

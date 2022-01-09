@@ -1,6 +1,4 @@
-import { Link } from "react-router-dom";
 import { Div, Text } from "atomize";
-import LoginButton from "./LoginButton";
 import { useAuth0 } from "@auth0/auth0-react";
 
 const LoginPage = () => {
@@ -8,7 +6,7 @@ const LoginPage = () => {
   return (
     <>
       <Div onclick= {loginWithRedirect()}>
-        <Text 
+        <Text
         tag="h1"
           textSize="display1"
           m={{ b: "1rem" }}

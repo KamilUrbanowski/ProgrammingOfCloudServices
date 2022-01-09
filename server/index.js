@@ -18,12 +18,8 @@ const pgClient = new Pool({
 });
 
 pgClient.on("connect", (client) => {
-<<<<<<< HEAD
     client.query("CREATE TABLE IF NOT EXISTS addedMessages (username TEXT, data TEXT)")
     .catch(err => console.log("PG ERROR", err));
-=======
-    client.query("CREATE TABLE IF NOT EXISTS message (data TEXT)").catch((err) => console.log("PG ERROR", err));
->>>>>>> 306a8295ea2eb9be360365b0b1b3ef8ece417bae
 });
 
 app.get("/", (req, res) => {
