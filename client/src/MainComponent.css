@@ -1,17 +1,17 @@
 .title {
-	font-weight: bold;
+    font-weight: bold;
 }
 
 .messages {
-	margin-top: 20px;
-	background: cornflowerblue;
+    margin-top: 20px;
+    background: cornflowerblue;
 }
 
 .message {
-	margin-top: 10px;
-	border-top: 1px dashed black;
+    margin-top: 10px;
+    border-top: 1px dashed black;
 }
 
 .form {
-	margin-top: 20px;
+    margin-top: 20px;
 }
