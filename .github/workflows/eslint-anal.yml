@@ -44,4 +44,4 @@ jobs:
             java-version: '11'
         - uses: pmd/pmd-github-action@v1
           with:
-            rulesets: 'pmd-ruleset.xml'
+            rulesets: 'rulesets/java/quickstart.xml'
