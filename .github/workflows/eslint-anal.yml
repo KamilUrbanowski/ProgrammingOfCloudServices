@@ -15,7 +15,8 @@ jobs:
         working-directory: ./server
         run: npx eslint .
       - name: Prettier
-        run: prettier -c .
+        working-directory: ./server
+        run: npx prettier -c .
   client-analisis:
     name: Client static analisis
     runs-on: ubuntu-latest
@@ -27,9 +28,8 @@ jobs:
         working-directory: ./client
         run: npm i --save-dev
       - name: Eslint analisis
-
-
         working-directory: ./client
         run: npx eslint .
       - name: Prettier
-        run: prettier -c .
+        working-directory: ./client
+        run: npx prettier -c .
