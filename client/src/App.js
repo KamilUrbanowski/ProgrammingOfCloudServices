@@ -7,6 +7,7 @@ import LoginButton from "./LoginButton";
 import { useAuth0 } from "@auth0/auth0-react";
 import LogoutButton from "./LogoutButton";
 
+<<<<<<< HEAD
 const App = () => {
   const { error, user, isAuthenticated, isLoading, loginWithRedirect } = useAuth0();
 
@@ -67,5 +68,24 @@ const App = () => {
     );
   }
 };
+=======
+function App() {
+    return (
+        <Router>
+            <Fragment>
+                <header className="header">
+                    <div>Message APP!</div>
+                    <Link to="/">Home</Link>
+                    <Link to="/otherpage">Other page</Link>
+                </header>
+                <div className="main">
+                    <Route exact path="/" component={MainComponent} />
+                    <Route path="/otherpage" component={OtherPage} />
+                </div>
+            </Fragment>
+        </Router>
+    );
+}
+>>>>>>> 306a8295ea2eb9be360365b0b1b3ef8ece417bae
 
 export default App;

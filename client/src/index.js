@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 import React from 'react';
 import { StyleReset } from 'atomize'
 import { Provider as StyletronProvider, DebugEngine } from "styletron-react";
@@ -7,6 +8,13 @@ import { Auth0Provider } from "@auth0/auth0-react";
 import ReactDOM from 'react-dom';
 import App from './App';
 import reportWebVitals from './reportWebVitals';
+=======
+import React from "react";
+import ReactDOM from "react-dom";
+import "./index.css";
+import App from "./App";
+import reportWebVitals from "./reportWebVitals";
+>>>>>>> 306a8295ea2eb9be360365b0b1b3ef8ece417bae
 
 const debug =
   process.env.NODE_ENV === "production" ? void 0 : new DebugEngine();
@@ -17,6 +25,7 @@ const engine = new Styletron();
 // 2. Provide the engine to the app
 // debug engine needs inlined source maps
 ReactDOM.render(
+<<<<<<< HEAD
   <StyletronProvider value={engine} debug={debug} debugAfterHydration>
     <Auth0Provider
     useCookiesForTransactions={true}
@@ -29,6 +38,12 @@ ReactDOM.render(
     <StyleReset />
   </StyletronProvider>,
   document.getElementById('root')
+=======
+    <React.StrictMode>
+        <App />
+    </React.StrictMode>,
+    document.getElementById("root")
+>>>>>>> 306a8295ea2eb9be360365b0b1b3ef8ece417bae
 );
 
 // If you want to start measuring performance in your app, pass a function

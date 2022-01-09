@@ -1,4 +1,5 @@
 {
+<<<<<<< HEAD
   "name": "server",
   "version": "1.0.0",
   "description": "",
@@ -20,4 +21,27 @@
   "devDependencies": {
     "eslint": "^8.3.0"
   }
+=======
+    "name": "server",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "dev": "nodemon",
+        "start": "node index.js"
+    },
+    "author": "Kamil",
+    "license": "ISC",
+    "dependencies": {
+        "body-parser": "*",
+        "cors": "2.8.5",
+        "express": "4.17.1",
+        "nodemon": "1.18.3",
+        "pg": "8.7.1"
+    },
+    "devDependencies": {
+        "eslint": "^8.3.0",
+        "prettier": "^2.5.1"
+    }
+>>>>>>> 306a8295ea2eb9be360365b0b1b3ef8ece417bae
 }
