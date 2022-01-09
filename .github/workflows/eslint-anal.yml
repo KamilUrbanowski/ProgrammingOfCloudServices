@@ -1,4 +1,4 @@
-name: "Eslint analysis"
+name: "Static analisis"
 on: [push]
 jobs:
   client-eslint-analisis:
@@ -35,3 +35,13 @@ jobs:
       - name: Eslint analisis
         working-directory: ./server
         run: npx eslint .
+  pmd-analisis:
+      runs-on: ubuntu-latest
+      steps:
+        - uses: actions/setup-java@v2
+          with:
+            distribution: 'temurin'
+            java-version: '11'
+        - uses: pmd/pmd-github-action@v1
+          with:
+            rulesets: 'pmd-ruleset.xml'

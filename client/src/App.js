@@ -5,21 +5,21 @@ import OtherPage from "./OtherPage";
 import MainComponent from "./MainComponent";
 
 function App() {
-  return (
-    <Router>
-      <Fragment>
-        <header className="header">
-          <div>Message APP!</div>
-          <Link to="/">Home</Link>
-          <Link to="/otherpage">Other page</Link>
-        </header>
-        <div className="main">
-          <Route exact path="/" component={MainComponent} />
-          <Route path="/otherpage" component={OtherPage} />
-        </div>
-      </Fragment>
-    </Router>
-  );
-};
+	return (
+		<Router>
+			<Fragment>
+				<header className="header">
+					<div>Message APP!</div>
+					<Link to="/">Home</Link>
+					<Link to="/otherpage">Other page</Link>
+				</header>
+				<div className="main">
+					<Route exact path="/" component={MainComponent} />
+					<Route path="/otherpage" component={OtherPage} />
+				</div>
+			</Fragment>
+		</Router>
+	);
+}
 
 export default App;
