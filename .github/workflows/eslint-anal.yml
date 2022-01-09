@@ -1,7 +1,23 @@
 name: "Static analisis"
-on: [push]
+on: [ push ]
 jobs:
-  client-eslint-analisis:
+  server-analisis:
+    name: Server static analisis
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v2
+        with:
+          fetch-depth: 1
+      - name: Instal
+        working-directory: ./server
+        run: npm i --save-dev
+      - name: Eslint analisis
+        working-directory: ./server
+        run: npx eslint .
+      - name: Prettier
+        run: prettier -c .
+  client-analisis:
+    name: Client static analisis
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
@@ -11,24 +27,9 @@ jobs:
         working-directory: ./client
         run: npm i --save-dev
       - name: Eslint analisis
-        uses: mrdivyansh/eslint-action@1.0.6
-        with:
-          repo-token: ${{secrets.GITHUB_TOKEN}}
-#  server-eslint-analisis:
-#    runs-on: ubuntu-latest
-#    steps:
-#      - uses: actions/checkout@v2
-#        with:
-#          fetch-depth: 1
-#      - name: Pwd
-#        working-directory: ./server
-#        run: pwd
-#
-#      - name: Instal
-#        working-directory: ./server
-#        run: npm i --save-dev
-#
-#      - name: Eslint analisis
-#        working-directory: ./server
-#        run: npx eslint .
 
+
+        working-directory: ./client
+        run: npx eslint .
+      - name: Prettier
+        run: prettier -c .
