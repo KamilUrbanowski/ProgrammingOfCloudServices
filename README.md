@@ -52,5 +52,6 @@ Aplikacja ma służyć do dystrybuowania wiadomości na wspólnym kanale pomięd
 
 # Key Vault
 
-W celu bezpiecznego zarządzania hasłem do bazy danych, wykorzysta została usług Azure'a o nazwie Key Vault. Umożliwia ona przechowywanie kluczy i tajnych wpisów, nad którymi użytkownik ma pełną kontrolę- może on udzielić uprawnień swoim aplikacjom czy też aplikacjom partnerów, aby mogli oni uzyskać bezporśredni dostęp do kluczy. Microsoft nie ma również dostępu do kluczy i nie ma możliwośći ich wyodrębniania. Dodatkowowo przechowywanie kluczy kryptograficznych w chmurze, a nie lokalnie, pozwala zwiększyć wydajność i zmniejszyć opóźnienia aplikacji w chmurze.
+W celu bezpiecznego zarządzania hasłem do bazy danych, wykorzystana została usług Azure'a o nazwie Key Vault. Umożliwia ona przechowywanie kluczy i tajnych wpisów, nad którymi użytkownik ma pełną kontrolę - może on udzielić uprawnień swoim aplikacjom czy też aplikacjom partnerów, aby mogli oni uzyskać bezporśredni dostęp do kluczy. Microsoft nie ma dostępu do kluczy i nie ma możliwośći ich wyodrębniania, co świadczy o prywatności świadczonej usługi. Dodatkowowo przechowywanie kluczy kryptograficznych w chmurze, a nie lokalnie, pozwala zwiększyć wydajność i zmniejszyć opóźnienia aplikacji w chmurze. Na poniższym screenshocie został przedstawiony widok na tajny wpis zawierający hasło do naszej bazy danych:
+
 ![keyvault](https://user-images.githubusercontent.com/63351744/148702261-2cdad463-38f2-46fa-8358-50edb40ab7d0.PNG)
