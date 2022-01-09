@@ -1,40 +1,40 @@
 name: "Static analisis"
 on: [push]
 jobs:
-  client-eslint-analisis:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
-      - name: Pwd
-        working-directory: ./client
-        run: pwd
-
-      - name: Instal
-        working-directory: ./client
-        run: npm i --save-dev
-
-      - name: Eslint analisis
-        working-directory: ./client
-        run: npx eslint .
-  server-eslint-analisis:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-        with:
-          fetch-depth: 1
-      - name: Pwd
-        working-directory: ./server
-        run: pwd
-
-      - name: Instal
-        working-directory: ./server
-        run: npm i --save-dev
-
-      - name: Eslint analisis
-        working-directory: ./server
-        run: npx eslint .
+#  client-eslint-analisis:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 1
+#      - name: Pwd
+#        working-directory: ./client
+#        run: pwd
+#
+#      - name: Instal
+#        working-directory: ./client
+#        run: npm i --save-dev
+#
+#      - name: Eslint analisis
+#        working-directory: ./client
+#        run: npx eslint .
+#  server-eslint-analisis:
+#    runs-on: ubuntu-latest
+#    steps:
+#      - uses: actions/checkout@v2
+#        with:
+#          fetch-depth: 1
+#      - name: Pwd
+#        working-directory: ./server
+#        run: pwd
+#
+#      - name: Instal
+#        working-directory: ./server
+#        run: npm i --save-dev
+#
+#      - name: Eslint analisis
+#        working-directory: ./server
+#        run: npx eslint .
   pmd-analisis:
       runs-on: ubuntu-latest
       steps:
