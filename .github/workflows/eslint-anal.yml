@@ -11,11 +11,9 @@ jobs:
         working-directory: ./client
         run: npm i --save-dev
       - name: Eslint analisis
-        working-directory: ./client
         uses: mrdivyansh/eslint-action@1.0.7
         with:
           repo-token: ${{secrets.GITHUB_TOKEN}}
-        run: npx eslint .
 #  server-eslint-analisis:
 #    runs-on: ubuntu-latest
 #    steps:
