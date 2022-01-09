@@ -1,35 +1,35 @@
-import { useCallback, useState, useEffect } from 'react'
-import axios from 'axios'
-import './MainComponent.css'
+import { useCallback, useState, useEffect } from "react";
+import axios from "axios";
+import "./MainComponent.css";
 
 const MainComponent = () => {
-  const [values, setMessages] = useState([])
-  const [value, setValue] = useState('')
+    const [values, setMessages] = useState([]);
+    const [value, setValue] = useState("");
 
-  const getAllMessages = useCallback(async () => {
-    // we will use nginx to redirect it to the proper URL
-    const data = await axios.get('/api/messages/all')
-    setMessages(data.data.rows.map((row) => row.data))
-  }, [])
+    const getAllMessages = useCallback(async () => {
+        // we will use nginx to redirect it to the proper URL
+        const data = await axios.get("/api/messages/all");
+        setMessages(data.data.rows.map((row) => row.data));
+    }, []);
 
-  const saveMessage = useCallback(
-    async (event) => {
-      event.preventDefault()
+    const saveMessage = useCallback(
+        async (event) => {
+            event.preventDefault();
 
-      await axios.post('/api/messages', {
-        value
-      })
+            await axios.post("/api/messages", {
+                value,
+            });
 
-      setValue('')
-    },
-    [value]
-  )
+            setValue("");
+        },
+        [value]
+    );
 
-  useEffect(() => {
-    getAllMessages()
-  }, [])
+    useEffect(() => {
+        getAllMessages();
+    }, []);
 
-  return (
+    return (
         <div>
             <button onClick={getAllMessages}>Get all messages</button>
             <br />
@@ -44,13 +44,13 @@ const MainComponent = () => {
                 <input
                     value={value}
                     onChange={(event) => {
-                      setValue(event.target.value)
+                        setValue(event.target.value);
                     }}
                 />
                 <button>Submit</button>
             </form>
         </div>
-  )
-}
+    );
+};
 
-export default MainComponent
+export default MainComponent;

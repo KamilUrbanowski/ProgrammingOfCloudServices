@@ -17,6 +17,11 @@
         "react/react-in-jsx-scope": 0,
         "no-undef": "off",
         "react/no-unescaped-entities": "off",
-        "react/jsx-key": 0
+        "react/jsx-key": 0,
+        "quotes": 0,
+        "semi": 0,
+        "indent": 0,
+        "comma-dangle": 0,
+        "space-before-function-paren": 0
     }
 }

@@ -1,11 +1,11 @@
-import { Fragment } from 'react'
-import './App.css'
-import { BrowserRouter as Router, Route, Link } from 'react-router-dom'
-import OtherPage from './OtherPage'
-import MainComponent from './MainComponent'
+import { Fragment } from "react";
+import "./App.css";
+import { BrowserRouter as Router, Route, Link } from "react-router-dom";
+import OtherPage from "./OtherPage";
+import MainComponent from "./MainComponent";
 
-function App () {
-  return (
+function App() {
+    return (
         <Router>
             <Fragment>
                 <header className="header">
@@ -19,7 +19,7 @@ function App () {
                 </div>
             </Fragment>
         </Router>
-  )
+    );
 }
 
-export default App
+export default App;
