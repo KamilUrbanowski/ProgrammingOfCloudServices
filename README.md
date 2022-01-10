@@ -74,7 +74,7 @@ W celu bezpiecznego zarządzania hasłem do bazy danych, wykorzystana została u
 
 ![keyvault](https://user-images.githubusercontent.com/63351744/148702261-2cdad463-38f2-46fa-8358-50edb40ab7d0.PNG)
 
-##Usługa Kubernetes
+## Usługa Kubernetes
 Cała aplikacja została postawiona w ramach usługi Kubernetes:
 ![obraz](https://user-images.githubusercontent.com/63351744/148815744-206e0987-008c-4b59-aa94-fe6a30fdb9ff.png)
 ![obraz](https://user-images.githubusercontent.com/63351744/148815564-ab4d10a9-61a4-42a0-897a-21b02e5ba1e8.png)
