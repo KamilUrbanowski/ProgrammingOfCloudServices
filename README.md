@@ -56,6 +56,15 @@ Każdy element systemu jest kontenerem Docker a do zarządzania nimi jest wykorz
 
 ![Diagram architektury](./documentation/DiagramArchitektury2.drawio.svg)
 
+## Lokalne środowisko
+
+Lokalny development prowadzony był przy pomocy konteneryzacji używając do tego dockera oraz zbierając całą architekturę w opisujący ją plik docker-compose. Zawiera kod umożliwiający wdrożenie nginx jako ingress controller, postgresa jako bazy danych oraz zaimplementowanych przez nas aplikacji frontendowej i backendowej. Opis budowania  tych aplikacji zawarty jest w plikach Dockerfile.dev. 
+
+Wykorzystując konteneryzacje pozbywamy się zależności od maszyn, na których uruchamiany jest cały projekt.
+
+Końcowa struktura aplikacji wykorzystuje klaster kubernetesowy do wdrażania aplikacji i jest również możliwość przetesowania jej lokalnie
+  
+
 ## Przypadki użycia
 
 Aplikacja ma służyć do dystrybuowania wiadomości na wspólnym kanale pomiędzy zarejestrowanymi użytkownikami.
