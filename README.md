@@ -76,9 +76,9 @@ W celu bezpiecznego zarządzania hasłem do bazy danych, wykorzystana została u
 
 ## Problemy
 
-W trakcie pracy nad projektem spotkaliśmy się z jednym problem, jednak bardzo istotnym jakim są koszta. Usługi i serwisy z których korzystamy lub chcieliśmy skorzystać okazały się bardzo drogie w utrzymaniu, przez co nasz projekt nie może być uruchomiony cały czas i jest włączany na czas testów czy przygotowania sprawozdania. By zoptymalizować koszty skorzystaliśmy z zewnętrznego serwisu do autoryzacji - auth0, który jest darmowy do 7000 użytkowników. Zrezygnowaliśmy również z automatycznego odświeżania wiadomości.
+W trakcie pracy nad projektem spotkaliśmy się z jednym problem, jednak bardzo istotnym, jakim są koszta. Usługi i serwisy z których korzystamy lub chcieliśmy skorzystać okazały się bardzo drogie w utrzymaniu, przez co nasz projekt nie może być uruchomiony cały czas i jest włączany na czas testów czy przygotowania sprawozdania. By zoptymalizować koszty skorzystaliśmy z zewnętrznego serwisu do autoryzacji - auth0, który jest darmowy do 7000 użytkowników. Zrezygnowaliśmy również z automatycznego odświeżania wiadomości.
 
 ## Wnioski
 
-Podsumowując projekt został zakończony pomyślnie. Mimo problemów związanych z kosztami udało nam się je w pewien sposób obejść i dostarczyć gotowy produkt. Sam proces tworzenia aplikacji przebiegł również bezproblemowo. Do podziału pracy i jej przebiegu skorzystaliśmy z tablicy kanban wbudowanej w rozwiązanie github. Większość komunikacji odbywała się jednak w aplikacji Messenger czy MS Teams. Dobra komunikacja i efektywny podział pracy pozwolił każdemu z nas na zajęcie się tematem, który najbardziej go interesował i w którym czuł się najlepiej.
+Podsumowując projekt został zakończony pomyślnie. Mimo problemów związanych z kosztami udało nam się je w pewien sposób obejść i dostarczyć gotowy produkt. Sam proces tworzenia aplikacji przebiegł również bezproblemowo. Do podziału pracy i jej przebiegu skorzystaliśmy z tablicy kanban wbudowanej w rozwiązanie github. Większość komunikacji odbywała się jednak w aplikacji Messenger czy MS Teams. Dobra komunikacja i efektywny podział pracy pozwolił każdemu z nas na zajęcie się tematem, który najbardziej go interesował i w którym czuł się najlepiej co zaowocowało gotowym, chmurowym produktem.
 
