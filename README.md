@@ -74,6 +74,13 @@ W celu bezpiecznego zarządzania hasłem do bazy danych, wykorzystana została u
 
 ![keyvault](https://user-images.githubusercontent.com/63351744/148702261-2cdad463-38f2-46fa-8358-50edb40ab7d0.PNG)
 
+##Usługa Kubernetes
+Cała aplikacja została postawiona w ramach usługi Kubernetes:
+![obraz](https://user-images.githubusercontent.com/63351744/148815744-206e0987-008c-4b59-aa94-fe6a30fdb9ff.png)
+![obraz](https://user-images.githubusercontent.com/63351744/148815564-ab4d10a9-61a4-42a0-897a-21b02e5ba1e8.png)
+![obraz](https://user-images.githubusercontent.com/63351744/148815638-47084292-4911-4953-98ce-caae6a8a516d.png)
+
+
 ## Problemy
 
 W trakcie pracy nad projektem spotkaliśmy się z jednym problem, jednak bardzo istotnym, jakim są koszta. Usługi i serwisy z których korzystamy lub chcieliśmy skorzystać okazały się bardzo drogie w utrzymaniu, przez co nasz projekt nie może być uruchomiony cały czas i jest włączany na czas testów czy przygotowania sprawozdania. By zoptymalizować koszty skorzystaliśmy z zewnętrznego serwisu do autoryzacji - auth0, który jest darmowy do 7000 użytkowników. Zrezygnowaliśmy również z automatycznego odświeżania wiadomości.
