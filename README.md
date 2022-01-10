@@ -62,7 +62,7 @@ Aplikacja ma służyć do dystrybuowania wiadomości na wspólnym kanale pomięd
 
 ## Autoryzacja
 
-Jako narzędzie do autoryzacji wykorzystaliśmy auth0. Wybraliśmy darmową usługę zamiast tej oferowanej przez Azure ze względu na rosnące koszty naszego rozwiązania i ograniczony budżet. Auth0 oferuje darmowe korzystane z usługi do 7000 użytkowników co w zupełności nam wystarczyło. Konfiguracja autoryzacji nie sprawiła żadnych problemów. Wystarczyło dodać aplikacje w usłudze auth0, skonfigurować ją (dodać adres naszej aplikacji i ustawić typ aplikacji) oraz do naszej aplikacji podać odpowiednie parametry przekazane przez auth0. Poniżej częściowy widok konfiguracji aplikacji w auth0:
+Jako narzędzie do autoryzacji wykorzystaliśmy auth0. Wybraliśmy darmową usługę zamiast tej oferowanej przez Azure ze względu na rosnące koszty naszego rozwiązania i ograniczony budżet. Auth0 oferuje darmowe korzystanie z usługi do 7000 użytkowników co w zupełności nam wystarczyło. Konfiguracja autoryzacji nie sprawiła żadnych problemów. Wystarczyło dodać aplikację w usłudze auth0, skonfigurować ją (dodać adres naszej aplikacji i ustawić typ aplikacji) oraz do naszej aplikacji webowej podać odpowiednie parametry przekazane przez auth0. Następnie korzystając z Reacta pozostało dostosować naszą aplikacje do podanego rozwiązania. Poniżej częściowy widok konfiguracji aplikacji w auth0:
 
 ![image](https://user-images.githubusercontent.com/37267080/148803373-33d80dfa-5589-42cc-b7a1-9e1934cc75fc.png)
 
