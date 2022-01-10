@@ -104,6 +104,29 @@ Cała aplikacja została postawiona w ramach usługi Kubernetes:
 ![obraz](https://user-images.githubusercontent.com/63351744/148815638-47084292-4911-4953-98ce-caae6a8a516d.png)
 
 
+## Baza danych
+
+Utworzona baza danych operuje w oparciu o silnik PostgreSQL w wersji 11.
+Nie wykorzystaliśmy najnowszej, czternastej, wersji tego silnika, gdyż chmura Azure nie pozwoliła nam w zadanym budżecie takiego silnika wybrać.
+
+W celu zaoszczędzenia pieniędzy, ustawiliśmy limit przechowywanych danych na 100GB.
+Nie wyłączaliśmy jednak domyślnie uruchomionej funkcji automatycznego zwiększania dostępnego dysku w przypadku wykorzystania całego dostępnego.
+
+Redundancja danych została ustawiona na lokalną.
+Lokalizacja serwera została ustawiona na Francję, dzięki czemu mogliśmy uzyskać mniejsze opóźnienia niż w przypadku serwerów w Stanach Zjednoczonych.
+
+Pricing model został ustawiony na General Purpose.
+Zapewnia on stałą wydajność IO w przeciwieństwie do Basic.
+Jest on niestety znacznie droższy.
+
+Baza danych utworzona w czasie realizacji projektu składa się z tabeli przechowującej wiadomości.
+Pojedynczy rekord w tej tablie przechowuje nazwę użytkownika oraz treść wiadomości.
+Obydwie kolumny tej tabeli mogą przechowywać aż do 1GB danych (ograniczenie narzucone przez architekturę silnika bazy danych).
+
+<div align="center">
+  <img src="documentation/db.png" alt="Diagram bazy danych">
+</div>
+
 ## Problemy
 
 W trakcie pracy nad projektem spotkaliśmy się z jednym problem, jednak bardzo istotnym, jakim są koszta. Usługi i serwisy z których korzystamy lub chcieliśmy skorzystać okazały się bardzo drogie w utrzymaniu, przez co nasz projekt nie może być uruchomiony cały czas i jest włączany na czas testów czy przygotowania sprawozdania. By zoptymalizować koszty skorzystaliśmy z zewnętrznego serwisu do autoryzacji - auth0, który jest darmowy do 7000 użytkowników. Zrezygnowaliśmy również z automatycznego odświeżania wiadomości.
@@ -112,3 +135,19 @@ W trakcie pracy nad projektem spotkaliśmy się z jednym problem, jednak bardzo 
 
 Podsumowując projekt został zakończony pomyślnie. Mimo problemów związanych z kosztami udało nam się je w pewien sposób obejść i dostarczyć gotowy produkt. Sam proces tworzenia aplikacji przebiegł również bezproblemowo. Do podziału pracy i jej przebiegu skorzystaliśmy z tablicy kanban wbudowanej w rozwiązanie github. Większość komunikacji odbywała się jednak w aplikacji Messenger czy MS Teams. Dobra komunikacja i efektywny podział pracy pozwolił każdemu z nas na zajęcie się tematem, który najbardziej go interesował i w którym czuł się najlepiej co zaowocowało gotowym, chmurowym produktem.
 
+W trakcie realizacji projektu doszliśmy jednak do wniosku, że platforma Azure nie jest przyjazna dla firm bez specjalisty od usług Azure.
+Podczas konfiguracji bazy danych większość domyślnych opcji odpowiadała najdroższym możliwym opcjom.
+Część domyślnie włączonych możliwości mogących wpływać na koszt usługi, takich jak na przykład automatyczne powiększanie dysku po wyczerpaniu limitu, nie może być wyłączona w trakcie tworzenia usługi a dopiero po jej utworzeniu. 
+
+
+Po stworzeniu bazy danych PostgreSQL zauważyliśmy również, że estymowany koszt działania bazy potrafi być bardzo niejednoznaczy.
+W naszym przypadku w trakcie tworzenia tej bazy Azure wyliczył koszt działania na 25$ miesięcznie.
+Po zapisaniu danych odpowiadających 0.12% pojemności bazy danych okazało się jednak, że taka baza jest estymowana na 434.05$ miesięcznie.
+
+Odkryliśmy również, że Azure próbuje zamnkąć użytkowników w swoim środowisku utrudniając przeniesienie swoich danych do konkurencji lub na własne serwery.
+Przykładem takich operacji jest dla dyskryminowanie cenowo popularnych, otwartych silników baz danych poprzez manipulację cen w celu promocji własnego, własnościowego silnika.
+Samo działanie bez przechowywania jakichkolwiek danych silnika PostgreSQL przy minimalnych ustawieniach kosztuje około 20$.
+Dla porównania, silnik Azure SQL w takiej samej sytuacji nie pobiera opłat.
+W tym przypadku różnica cenowa nie jest gigantyczna.
+Samo jednak jej istnienie może przekonać niedoświadczoną techincznie firmę do wybrania własnościowego silnika Azure SQL, przez co w przyszłości będą musieli ponieść dodatkowe koszty związane z przepisywaniem niekompatybilnej logiki biznesowej.
+Takie postępowanie ze strony Azure jako korporacji jest zrozumiałe, lecz uważamy, że jest to bardzo wrogie dla konsumenta. 
