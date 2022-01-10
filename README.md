@@ -34,6 +34,16 @@ The other way around to switch from k8s cluster to docker-compose way you have t
 
 # Dokumentacja
 
+## Wstęp
+
+Tematem naszego projektu jest aplikacja do dystrybuowania wiadomości na wspólnym kanale pomiędzy zarejestrowanymi użytkownikami. W trakcie naszej pracy będziemy korzystać z githuba jako naszego repozytorium i Portalu Azure do zarządzania usługami w chmurze. W skład zespołu wchodzą:
+
+- Kamil Mandas (backend)
+- Kamil Urbanowski (dev-ops)
+- Przemysław Rawa (baza danych)
+- Krystian Szefler (frontend, dokumentacja)
+- Karol Wójciński (autoryzacja, dokumentacja)
+
 ## Architektura
 
 Każdy element systemu jest kontenerem Docker a do zarządzania nimi jest wykorzystany Kubernetes. System jest zbudowany z następujących elementów:
@@ -50,8 +60,17 @@ Aplikacja ma służyć do dystrybuowania wiadomości na wspólnym kanale pomięd
 
 ![Diagram przypadków użycia](./documentation/255927176_487888469032763_4747737515049667795_n.png)
 
-# Key Vault
+## Key Vault
 
 W celu bezpiecznego zarządzania hasłem do bazy danych, wykorzystana została usług Azure'a o nazwie Key Vault. Umożliwia ona przechowywanie kluczy i tajnych wpisów, nad którymi użytkownik ma pełną kontrolę - może on udzielić uprawnień swoim aplikacjom czy też aplikacjom partnerów, aby mogli oni uzyskać bezporśredni dostęp do kluczy. Microsoft nie ma dostępu do kluczy i nie ma możliwośći ich wyodrębniania, co świadczy o prywatności świadczonej usługi. Dodatkowowo przechowywanie kluczy kryptograficznych w chmurze, a nie lokalnie, pozwala zwiększyć wydajność i zmniejszyć opóźnienia aplikacji w chmurze. Na poniższym screenshocie został przedstawiony widok na tajny wpis zawierający hasło do naszej bazy danych:
 
 ![keyvault](https://user-images.githubusercontent.com/63351744/148702261-2cdad463-38f2-46fa-8358-50edb40ab7d0.PNG)
+
+## Problemy
+
+W trakcie pracy nad projektem spotkaliśmy się z jednym problem, jednak bardzo istotnym jakim są koszta. Usługi i serwisy z których korzystamy lub chcieliśmy skorzystać okazały się bardzo drogie w utrzymaniu, przez co nasz projekt nie może być uruchomiony cały czas i jest włączany na czas testów czy przygotowania sprawozdania. By zoptymalizować koszty skorzystaliśmy z zewnętrznego serwisu do autoryzacji - auth0, który jest darmowy do 7000 użytkowników. Zrezygnowaliśmy również z automatycznego odświeżania wiadomości.
+
+## Wnioski
+
+Podsumowując projekt został zakończony pomyślnie. Mimo problemów związanych z kosztami udało nam się je w pewien sposób obejść i dostarczyć gotowy produkt. Sam proces tworzenia aplikacji przebiegł również bezproblemowo. Do podziału pracy i jej przebiegu skorzystaliśmy z tablicy kanban wbudowanej w rozwiązanie github. Większość komunikacji odbywała się jednak w aplikacji Messenger czy MS Teams. Dobra komunikacja i efektywny podział pracy pozwolił każdemu z nas na zajęcie się tematem, który najbardziej go interesował i w którym czuł się najlepiej.
+
