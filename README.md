@@ -70,6 +70,13 @@ Jako narzędzie do autoryzacji wykorzystaliśmy auth0. Wybraliśmy darmową usł
 
 Jak widzimy powyżej dodaliśmy nasze lokalne adresy w celach testowych oraz adres naszej aplikacji postawionej w chmurze.
 
+## Backend
+
+Do zbudowania backendu posłużył framework *Express*, który pozwala budować aplikacje backendowe przy pomocy node.js. Wybór tego rozwiązania oparty był głównie na jego minimalizmie oraz lekkości.
+Sama aplikacja backendowa służy do komunikacji z bazą danych aby wykonywać operacje na danych oraz publikuje endpointy, z którymi komunikuje się frontend przy pomoci REST API.
+Kod dwóch podstawowych funkcjonalności (zapis wiadomości oraz pobranie wszystkich wiadomości):
+![image](https://user-images.githubusercontent.com/23197241/148824853-4c4bad3a-d380-4521-b7d1-3c6a32cb43b8.png)
+
 ## Frontend
 
 Do zbudowania frontendu posłużył *React*.Komunikuje się on z backendem przy pomocy REST API. Do budowy interfejsu został użyty framework [Atomize](https://atomizecode.com).
