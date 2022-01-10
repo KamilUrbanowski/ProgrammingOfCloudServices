@@ -51,8 +51,10 @@ Każdy element systemu jest kontenerem Docker a do zarządzania nimi jest wykorz
 2.	**Frontend** w postaci *Reacta* do iterakcji z użytkownikiem.
 3.	**Backend** na silniku *Node.js* z frameworkiem *Express* pozwalającym na łatwe zbudowanie REST API dla frontendu.
 4.	**Baza danych** *PostgreSQL* na której przechowywane są wiadomości.
+5.  **Key Vault** do przechowywania hasła do bazy danych
+6.  **OAuth0** służący do autoryzacji użytkownika
 
-![Diagram architektury](./documentation/DiagramArchitektury.drawio.svg)
+![Diagram architektury](./documentation/DiagramArchitektury2.drawio.svg)
 
 ## Przypadki użycia
 
@@ -68,6 +70,11 @@ Jako narzędzie do autoryzacji wykorzystaliśmy auth0. Wybraliśmy darmową usł
 
 Jak widzimy powyżej dodaliśmy nasze lokalne adresy w celach testowych oraz adres naszej aplikacji postawionej w chmurze.
 
+## Frontend
+
+Do zbudowania frontendu posłużył *React*.Komunikuje się on z backendem przy pomocy REST API. Do budowy interfejsu został użyty framework [Atomize](https://atomizecode.com).
+
+![Główne okno aplikacji](./documentation/Screenshot_2022-01-10_at_19.29.49.png)
 ## Key Vault
 
 W celu bezpiecznego zarządzania hasłem do bazy danych, wykorzystana została usług Azure'a o nazwie Key Vault. Umożliwia ona przechowywanie kluczy i tajnych wpisów, nad którymi użytkownik ma pełną kontrolę - może on udzielić uprawnień swoim aplikacjom czy też aplikacjom partnerów, aby mogli oni uzyskać bezporśredni dostęp do kluczy. Microsoft nie ma dostępu do kluczy i nie ma możliwośći ich wyodrębniania, co świadczy o prywatności świadczonej usługi. Dodatkowowo przechowywanie kluczy kryptograficznych w chmurze, a nie lokalnie, pozwala zwiększyć wydajność i zmniejszyć opóźnienia aplikacji w chmurze. Na poniższym screenshocie został przedstawiony widok na tajny wpis zawierający hasło do naszej bazy danych:
